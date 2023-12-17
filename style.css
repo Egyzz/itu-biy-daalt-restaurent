@@ -1,0 +1,156 @@
+body {
+    background-color: sienna;
+}
+
+.bk {
+    top: 0;
+    background-image: url(logo.png);
+    background-size: 20%;
+    background-repeat: no-repeat;
+    width: 80%;
+    height: 100%;
+    margin-left: 10%;
+    background-color: burlywood;
+    padding-bottom: 0.01%;
+}
+
+.timebox {
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 80%;
+    margin: 5%;
+    padding: 5%;
+    line-height: 3;
+    color: #fff;
+    font-size: 100%;
+}
+table{
+    width: 100%;
+}
+.outsidebox {
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 90%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    margin-bottom: 5%;
+}
+
+.outsidebox .box:nth-child(-n+4) {
+    display: block;
+}
+
+.box {
+    background-color: rgb(96, 85, 72);
+    transition: transform 0.3s ease;
+    font-size: 100%;
+    margin: 5%;
+    display: none;
+    text-align: center;
+}
+
+.box:hover {
+    transform: scale(1.1);
+}
+
+.before {
+    top: 40%;
+    width: 50px;
+    background-color: rgb(96, 85, 72);
+    color: white;
+    font-size: 40px;
+}
+
+.before:hover {
+    transform: scale(1.1);
+}
+
+.after {
+    top: 40%;
+    right: 0;
+    width: 50px;
+    background-color: rgb(96, 85, 72);
+    color: white;
+    font-size: 40px;
+}
+
+.after:hover {
+    transform: scale(1.1);
+}
+
+nav {
+    padding: 1%;
+    display: flex;
+}
+
+.navbar {
+    margin-left: 20%;
+    background-color: rgba(0, 0, 0, 0.7);
+    top: 0;
+}
+
+.navbar li {
+    margin-right: 10%;
+    list-style: none;
+}
+
+.navbar li a {
+    padding: 10%;
+    font-size: 120%;
+    color: white;
+    text-decoration: none;
+}
+
+.footer {
+    background-color: brown;
+    position: fixed;
+    border-radius: 10px;
+    bottom: 0;
+    margin: 0;
+    right: 0;
+    padding: 10px;
+    font-size: 100%;
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+.footer:hover {
+    transform: scale(1.1);
+}
+
+h1 {
+    font-size: 45px;
+    text-align: center;
+}
+
+p {
+    font-size: 20px;
+    margin-left: 40px;
+}
+
+h3 {
+    font-size: 25px;
+    margin-left: 40px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.comments {
+    color: white;
+    padding-left: 10%;
+    padding-bottom: 5%;
+    width: 90%;
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+}
