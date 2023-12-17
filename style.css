@@ -13,11 +13,11 @@ body{
     padding-bottom: 0.01%;
 }
 .timebox{
-    margin-left: 5%;
     background-color: rgba(0, 0, 0, 0.7);
-    width:90%;
-    height: 50%;
-    margin-bottom: 20px;
+    width: 80%;
+    margin: 20px;
+    height: 100%;
+    margin-right: 200px;
     padding: 20px;
     line-height: 3;
     color: #fff;
