@@ -23,9 +23,6 @@ body {
     color: #fff;
     font-size: 100%;
 }
-table{
-    width: 100%;
-}
 .outsidebox {
     background-color: rgba(0, 0, 0, 0.7);
     width: 90%;
@@ -77,7 +74,6 @@ table{
 .after:hover {
     transform: scale(1.1);
 }
-
 nav {
     padding: 1%;
     display: flex;
@@ -96,20 +92,10 @@ nav {
 
 .navbar li a {
     padding: 10%;
-    font-size: 12px;
+    font-size: 18px;
     color: white;
     text-decoration: none;
 }
-@media screen and (min-width: 560px) {
-    .navbar li a {
-        font-size: 16px;
-    }
-  }
-/* @media screen and (min-width: 480px) {
-    .navbar li a {
-        font-size: 24px;
-    }
-  } */
 .footer {
     background-color: brown;
     position: fixed;
@@ -118,7 +104,7 @@ nav {
     margin: 0;
     right: 0;
     padding: 10px;
-    font-size: 100%;
+    font-size: 20px;
     color: white;
     transition: transform 0.3s ease;
 }
@@ -134,12 +120,12 @@ h1 {
 
 p {
     font-size: 20px;
-    margin-left: 40px;
+    margin-left: 5%;
 }
 
 h3 {
     font-size: 25px;
-    margin-left: 40px;
+    margin-left: 5%;
 }
 
 button {
@@ -162,4 +148,31 @@ button:hover {
     width: 90%;
     height: auto;
     background-color: rgba(0, 0, 0, 0.7);
+}
+@media screen and (max-width: 720px) {
+    
+    .bk {
+        width: 95%;
+        margin-left: 2.5%;
+    }
+    .timebox, button, h3 {
+        font-size: 12px;
+    }
+    .before, .after {
+        width: 30px;
+        font-size: 20px;
+    }
+    .navbar li a, .footer {
+        font-size: 10px;
+    }
+    
+    h1 {
+        font-size: 14px;
+    }
+    p {
+        font-size: 10px;
+    }
+    .comments {
+        line-height: 1;
+    }
 }
