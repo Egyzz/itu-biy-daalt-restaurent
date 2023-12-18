@@ -5,10 +5,14 @@ function scheduleAppointment() {
     var phoneInput = document.getElementById("phone");
     var dateInput = document.getElementById("appointmentDate");
     var timeSelect = document.getElementById("appointmentTime");
+    var placeSelect = document.getElementById("place");
     var confirmationMessage = document.getElementById("confirmationMessage");
 
+    var selectedPlace = placeSelect.value;
     var selectedDate = dateInput.value;
     var selectedTime = timeSelect.options[timeSelect.selectedIndex].text;
+    if(selectedPlace === 1) var placestr = "Зүүн 4-н замын";
+    else var placestr = "3, 4-р хороололын";
     if (selectedDate === "") {
         confirmationMessage.innerHTML = "Өдрөө сонгоогүй байна.";
     } else {
@@ -16,6 +20,11 @@ function scheduleAppointment() {
             confirmationMessage.innerHTML = "Өөрийн мэдээллийг бөглөнө үү.";
         }
         else{
+            var phonePattern = /^\d{8}$/;
+            if (!phonePattern.test(phoneInput.value)) {
+                confirmationMessage.innerHTML = "Утасны дугаар буруу байна.";
+                return;
+            }
             var currentDate = new Date();
             var currentYear = currentDate.getFullYear();
             var currentMonth = currentDate.getMonth() + 1;
@@ -24,10 +33,10 @@ function scheduleAppointment() {
             if (selectedDate < currentDateString) {
                 confirmationMessage.innerHTML = "Огноо буруу байна.";
             } else {
-                var isBooked = checkAppointment(selectedDate, selectedTime);
+                var isBooked = checkAppointment(selectedPlace, selectedDate, selectedTime);
                 if (!isBooked) {
-                    confirmationMessage.innerHTML = "Цаг захиалагдлаа! Огноо: " + selectedDate + ", Цаг: " + selectedTime;
-                    bookedAppointments.push({ date: selectedDate, time: selectedTime });
+                    confirmationMessage.innerHTML = "Та төлбөр төлснөөр таны захиалга баталгаажихыг анхаарна уу! Салбар: " + placestr + ", Огноо: " + selectedDate + ", Цаг: " + selectedTime + "-т захиалахыг хүсвэл данс:5084152487 захиалгын төлбөр:100000₮, утга: утасны дугаар бичиж хийнэ үү.";
+                    bookedAppointments.push({ place: selectedPlace, date: selectedDate, time: selectedTime });
                 } else {
                     confirmationMessage.innerHTML = "Уучлаарай, энэ цаг нь захиалагдсан байна. Өөр цаг сонгоно уу.";
                 }
@@ -36,9 +45,9 @@ function scheduleAppointment() {
     }
 }
 
-function checkAppointment(date, time) {
+function checkAppointment(place, date, time) {
     for (var i = 0; i < bookedAppointments.length; i++) {
-        if (bookedAppointments[i].date === date && bookedAppointments[i].time === time) {
+        if (bookedAppointments[i].place === place && bookedAppointments[i].date === date && bookedAppointments[i].time === time) {
             return true;
         }
     }
